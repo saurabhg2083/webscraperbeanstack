@@ -20,7 +20,8 @@ course_coll = dbcon.getCollection(dbName='mydb', collectionName="course_collecti
 @app.route('/', methods=['GET'])
 @cross_origin()
 def homepage():
-    course_in = all_course()
+    # course_in = all_course()
+    course_in = list(course_coll.find({}))
     logging.info("List of Course names Generated")
     return render_template("index.html", course_in=course_in)
 

@@ -14,7 +14,7 @@
         <select name="content" required>
             <option value="" disabled selected>Select Course</option>
             {% for course in course_in %}
-            <option value="{{course}}">{{course}}</option>
+            <option value="{{course['Course_title']}}">{{course['Course_title']}}</option>
             {% endfor %}
         </select>
         <br />
